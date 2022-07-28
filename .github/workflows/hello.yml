@@ -1,4 +1,4 @@
-name: njs-hello
+name: hello
 
 on:
   push:
