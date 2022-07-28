@@ -1,4 +1,4 @@
-name: hello
+name: njs-hello
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
       - name: start nginx
         run: |
-          cd njs
+          cd njs-hello
           docker-compose up -d
       - name: run tests
         run: |
