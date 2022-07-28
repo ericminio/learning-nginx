@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+
+  nginx:
+    build: nginx
+    image: nginx:proxy
+    container_name: nginx
+    ports: 
+      - 80:80
+  
+    
+    
