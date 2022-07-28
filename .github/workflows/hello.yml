@@ -17,7 +17,7 @@ jobs:
       - name: start nginx
         run: |
           cd njs
-          docker-compose -d up
+          docker-compose up -d
       - name: run tests
         run: |
           ./testing/test.sh ./njs/hello.sh
