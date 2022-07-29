@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+
+  nginx:
+    depends_on: 
+      - api
+    build: nginx
+    image: nginx:proxy
+    container_name: nginx
+    ports: 
+      - 80:80
+    
+  api:
+    image: node:14.16.0-buster
+    container_name: api
+    ports: 
+      - 5015:5015
+    volumes:
+      - ./api:/home/node/app
+    working_dir: /home/node/app
+    command: "npm start"
+    
+    
