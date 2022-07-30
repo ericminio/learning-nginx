@@ -1,0 +1,16 @@
+{
+  "name": "njs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "maybe-stub.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha './*.spec.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}

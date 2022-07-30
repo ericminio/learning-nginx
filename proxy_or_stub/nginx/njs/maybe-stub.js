@@ -1,11 +1,16 @@
-function go(r) {
-    var payload = r.requestText;
+import fs from 'fs';
+const NJS_FOLDER = '/etc/nginx/njs';
+
+function go(request, folder) {
+    var __dirname = folder || NJS_FOLDER;
+    var payload = request.requestText;
     if (!!payload && payload.indexOf('42') !== -1) {
-        r.return(200, '42 I see u');
+        var data = fs.readFileSync(`${__dirname}/data.json`).toString();
+        request.return(200, JSON.parse(data).value);
         return;
     }
 
-    r.internalRedirect('@backend');
+    request.internalRedirect('@backend');
 }
 
 export default { go }
