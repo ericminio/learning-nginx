@@ -1,2 +1,2 @@
-'~this\s+one'   'matching';
+'~this one'     'matching';
 '~that\s+too'   'matching';
