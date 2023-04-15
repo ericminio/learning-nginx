@@ -11,3 +11,9 @@ function test_when_matching {
     
     assertequals "$body" "matching"
 }
+
+function test_several_entries_can_be_matching {
+    body=$(curl --header "Content-Type: text/plain" --request POST --data 'we want that  too' http://localhost)
+    
+    assertequals "$body" "matching"
+}
