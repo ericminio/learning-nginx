@@ -6,4 +6,4 @@
 
 [![proxy_or_stub](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_or_stub.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_or_stub.yml)
 
-[![body_based_proxy](https://github.com/ericminio/learning-nginx/actions/workflows/body_based_proxy.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/body_based_proxy.yml)
+[![payload_filter](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml)
