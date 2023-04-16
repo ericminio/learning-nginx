@@ -13,10 +13,7 @@ jobs:
         steps:
             - name: checkout code
               uses: actions/checkout@v2
-            - name: start nginx
-              run: |
-                  cd payload_filter/about
-                  docker-compose up -d
             - name: run tests
               run: |
-                  ./testing/test.sh ./payload_filter/about/tests.sh
+                  cd payload_filter/about
+                  ../../testing/test.sh .
