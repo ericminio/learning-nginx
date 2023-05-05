@@ -16,4 +16,6 @@ jobs:
             - name: run tests
               run: |
                   cd payload_filter/about
+                  docker-compose up --build -d
+                  sleep 5
                   ../../testing/test.sh .

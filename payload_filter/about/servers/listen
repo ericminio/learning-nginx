@@ -12,4 +12,8 @@ message=(
 echo "listening on port: $PORT"
 echo "answering with: $PONG"
 
-printf "%s\n" "${message[@]}" | nc -l -p $PORT
+while true; 
+do 
+    printf "%s\n" "${message[@]}" | nc -lp $PORT; 
+    sleep 1
+done
