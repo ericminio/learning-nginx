@@ -15,5 +15,4 @@ echo "answering with: $PONG"
 while true; 
 do 
     printf "%s\n" "${message[@]}" | nc -lp $PORT; 
-    sleep 1
 done
