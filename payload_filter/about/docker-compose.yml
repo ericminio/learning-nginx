@@ -8,3 +8,23 @@ services:
             - 80:80
         volumes:
             - ../nginx/conf.d:/etc/nginx/conf.d
+
+    nope:
+        build: servers
+        image: pong
+        container_name: nope
+        ports:
+            - 5066:5066
+        environment:
+            - PORT=5066
+            - PONG=not matching
+
+    good:
+        build: servers
+        image: pong
+        container_name: good
+        ports:
+            - 5015:5015
+        environment:
+            - PORT=5015
+            - PONG=matching
