@@ -4,7 +4,7 @@ source ./reload-nginx.sh
 source ./start.sh
 touch ../nginx/conf.d/matching
 
-function test_only_defaults_to_not_matching_with_empty_matching_file {
+function test_defaults_to_not_matching_with_empty_matching_file {
     start_servers
     echo "" > ../nginx/conf.d/matching
     nginx_reload_configuration
@@ -13,7 +13,7 @@ function test_only_defaults_to_not_matching_with_empty_matching_file {
     assertequals "$body" "not matching"
 }
 
-function test_only_matching_requires_configuration {
+function test_matching_requires_configuration {
     start_servers
     echo "'~this one' 'matching';" > ../nginx/conf.d/matching
     nginx_reload_configuration
