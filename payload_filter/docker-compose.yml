@@ -10,7 +10,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d
 
   nope:
-    build: servers
+    build: support/servers
     image: pong
     container_name: nope
     ports:
@@ -20,7 +20,7 @@ services:
       - PONG=not matching
 
   good:
-    build: servers
+    build: support/servers
     image: pong
     container_name: good
     ports:
