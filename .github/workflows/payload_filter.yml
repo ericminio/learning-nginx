@@ -19,5 +19,6 @@ jobs:
           docker-compose up --build -d
           sleep 5
           env
+          docker ps -a
           ./inspect.sh
           ../testing/test.sh ./about
