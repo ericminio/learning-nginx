@@ -18,4 +18,6 @@ jobs:
           cd payload_filter
           docker-compose up --build -d
           sleep 5
+          env
+          ./inspect.sh
           ../testing/test.sh ./about
