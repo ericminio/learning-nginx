@@ -23,7 +23,7 @@ jobs:
           touch ./nginx/conf.d/matching
       - name: update /etc/hosts
         run: |
-          sudo echo "127.0.0.1 host.docker.internal" | sudo tee -a /etc/hosts
+          sudo echo "172.17.0.1 host.docker.internal" | sudo tee -a /etc/hosts
           cat /etc/hosts
       - name: test config
         run: |
