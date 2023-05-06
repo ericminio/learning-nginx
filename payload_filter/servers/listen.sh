@@ -19,5 +19,5 @@ echo ""
 
 while true; 
 do 
-    printf "%s\n" "$answer" | nc -lp $PORT; 
+    echo "$answer" | nc -lp $PORT; 
 done
