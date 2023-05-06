@@ -36,6 +36,8 @@ jobs:
           env
           docker ps -a
           ./inspect.sh
+          ls -l /etc/hosts
+          cat /etc/hosts
       - name: run tests
         run: |
           cd payload_filter
