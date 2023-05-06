@@ -13,18 +13,26 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2
-      - name build
-        run: |
-          docker-compose build
-      - name test config
-        run: |
-          docker-compose run --rm nginx nginx -t
-      - name: run tests
+      - name: build
         run: |
           cd payload_filter
-          docker-compose up --build -d
+          docker-compose build
+      - name: test config
+        run: |
+          cd payload_filter
+          docker-compose run --rm nginx nginx -t
+      - name: start servers
+        run: |
+          cd payload_filter
+          docker-compose up -d
           sleep 5
+      - name: inspect
+        run: |
+          cd payload_filter
           env
           docker ps -a
           ./inspect.sh
+      - name: run tests
+        run: |
+          cd payload_filter
           ../testing/test.sh ./about
