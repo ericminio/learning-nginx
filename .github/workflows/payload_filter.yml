@@ -21,6 +21,10 @@ jobs:
         run: |
           cd payload_filter
           touch ./nginx/conf.d/matching
+      - name: update /etc/hosts
+        run: |
+          echo "172.17.0.1 host.docker.internal" >> /etc/hosts
+          cat /etc/hosts
       - name: test config
         run: |
           cd payload_filter
