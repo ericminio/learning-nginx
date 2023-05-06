@@ -36,7 +36,7 @@ jobs:
       - name: wait
         run: |
           cd payload_filter
-          ./wait.sh
+          ./support/wait.sh
       - name: run tests
         run: |
           cd payload_filter
