@@ -17,5 +17,5 @@ jobs:
         run: |
           cd payload_filter
           docker-compose up --build -d
-          ./wait.sh
+          sleep 5
           ../testing/test.sh ./about
