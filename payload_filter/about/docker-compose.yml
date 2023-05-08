@@ -7,7 +7,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ../nginx/conf.d:/etc/nginx/conf.d
 
   nope:
     build: support/servers
