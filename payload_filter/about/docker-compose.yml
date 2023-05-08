@@ -10,21 +10,27 @@ services:
       - ../nginx/conf.d:/etc/nginx/conf.d
 
   nope:
-    build: support/servers
-    image: pong
+    image: alpine:3.9.5
     container_name: nope
     ports:
       - 5066:5066
     environment:
       - PORT=5066
       - PONG=not matching
+    volumes:
+      - ./support:/usr/local/src/listen
+    command:
+      ["sh", "-c", "source /usr/local/src/listen/pong.sh && pong_server_listen"]
 
   good:
-    build: support/servers
-    image: pong
+    image: alpine:3.9.5
     container_name: good
     ports:
       - 5015:5015
     environment:
       - PORT=5015
       - PONG=matching
+    volumes:
+      - ./support:/usr/local/src/listen
+    command:
+      ["sh", "-c", "source /usr/local/src/listen/pong.sh && pong_server_listen"]
