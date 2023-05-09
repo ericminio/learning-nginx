@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  node:
+    image: node:18
+    container_name: node
+    user: "node"
+    working_dir: /home/node/app
+    ports:
+      - 8080:8080
+    volumes:
+      - ./node:/home/node/app
+    command: "npm start"
