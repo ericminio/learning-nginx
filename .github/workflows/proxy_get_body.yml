@@ -20,7 +20,7 @@ jobs:
       - name: start servers
         run: |
           cd proxy_get_body/about
-          docker-compose up -d
+          docker-compose up
       - name: run tests
         run: |
           cd proxy_get_body
