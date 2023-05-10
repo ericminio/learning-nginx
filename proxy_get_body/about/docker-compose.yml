@@ -1,13 +1,21 @@
 version: "3.4"
 
 services:
+  nginx:
+    image: nginx:1.23.4-alpine
+    container_name: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - ../nginx/conf.d:/etc/nginx/conf.d
+
   node:
     image: node:18
     container_name: node
     user: "node"
     working_dir: /home/node/app
     ports:
-      - 8080:8080
+      - 5015:5015
     volumes:
       - ./support/node:/home/node/app
     command: "npm start"
