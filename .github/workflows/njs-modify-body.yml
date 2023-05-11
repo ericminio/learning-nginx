@@ -24,4 +24,4 @@ jobs:
       - name: run tests
         run: |
           cd njs-modify-body
-          ./testing/test.sh ./about
+          ../testing/test.sh ./about
