@@ -14,3 +14,4 @@ function waiting {
 }
 
 waiting nginx 8080/ping "pong"
+waiting node 5015 "echoing: "
