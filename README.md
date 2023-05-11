@@ -9,3 +9,5 @@
 [![payload_filter](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml)
 
 [![proxy_get_body](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_get_body.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_get_body.yml)
+
+[![njs-modify-body](https://github.com/ericminio/learning-nginx/actions/workflows/njs-modify-body.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/njs-modify-body.yml)
