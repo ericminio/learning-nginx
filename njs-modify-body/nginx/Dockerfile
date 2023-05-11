@@ -1,10 +1,9 @@
-FROM nginx
+FROM nginx:1.23.4-alpine
 
 # RUN apt-get update && apt-get install -y vim
 
-COPY start.sh /usr/local/src/nginx/start.sh
-RUN chmod +x /usr/local/src/nginx/start.sh
+COPY start-nginx.sh /usr/local/start-nginx.sh
+RUN chmod +x /usr/local/start-nginx.sh
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-CMD ["/usr/local/src/nginx/start.sh"]

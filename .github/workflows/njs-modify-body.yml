@@ -1,0 +1,22 @@
+name: njs-modify-body
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: start nginx
+        run: |
+          cd njs-modify-body
+          docker-compose up -d
+      - name: run tests
+        run: |
+          ./testing/test.sh ./about

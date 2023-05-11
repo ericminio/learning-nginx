@@ -10,14 +10,4 @@ services:
     volumes:
       - ./nginx/njs:/etc/nginx/njs
       - ./nginx/conf.d:/etc/nginx/conf.d
-
-  node:
-    image: node:18-alpine
-    container_name: node
-    user: "node"
-    working_dir: /home/node/app
-    ports:
-      - 5015:5015
-    volumes:
-      - ./support/node:/home/node/app
-    command: "npm start"
+    command: "/usr/local/start-nginx.sh"

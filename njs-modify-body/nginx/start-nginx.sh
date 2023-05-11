@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cat /etc/nginx/conf.d/default.conf
 
