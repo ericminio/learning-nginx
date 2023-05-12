@@ -19,4 +19,5 @@ jobs:
                   docker-compose up -d
             - name: run tests
               run: |
-                  ./support/test.sh ./proxy_set_header/tests.sh
+                  cd proxy_set_header
+                  ../support/test.sh ./about
