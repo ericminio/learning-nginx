@@ -1,4 +1,4 @@
-name: payload_filter
+name: payload-filter
 
 on:
     push:
@@ -19,21 +19,21 @@ jobs:
                   cat /etc/hosts
             - name: create matching file
               run: |
-                  cd payload_filter
+                  cd payload-filter
                   touch ./nginx/conf.d/matching
             - name: build
               run: |
-                  cd payload_filter
+                  cd payload-filter
                   docker-compose build
             - name: test config
               run: |
-                  cd payload_filter
+                  cd payload-filter
                   docker-compose run --rm nginx nginx -t
             - name: start servers
               run: |
-                  cd payload_filter
+                  cd payload-filter
                   docker-compose up -d
             - name: run tests
               run: |
-                  cd payload_filter
+                  cd payload-filter
                   ../support/test.sh ./about

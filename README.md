@@ -6,8 +6,8 @@
 
 [![njs-stub-or-proxy](https://github.com/ericminio/learning-nginx/actions/workflows/njs-stub-or-proxy.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/njs-stub-or-proxy.yml)
 
-[![payload_filter](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml)
+[![payload-filter](https://github.com/ericminio/learning-nginx/actions/workflows/payload-filter.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/payload-filter.yml)
 
-[![proxy_get_body](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_get_body.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_get_body.yml)
+[![proxy-get-body](https://github.com/ericminio/learning-nginx/actions/workflows/proxy-get-body.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/proxy-get-body.yml)
 
 [![njs-modify-body](https://github.com/ericminio/learning-nginx/actions/workflows/njs-modify-body.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/njs-modify-body.yml)

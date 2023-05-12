@@ -1,4 +1,4 @@
-name: proxy_get_body
+name: proxy-get-body
 
 on:
     push:
@@ -19,13 +19,13 @@ jobs:
                   cat /etc/hosts
             - name: build
               run: |
-                  cd proxy_get_body
+                  cd proxy-get-body
                   docker-compose build
             - name: start servers
               run: |
-                  cd proxy_get_body
+                  cd proxy-get-body
                   docker-compose up -d
             - name: run tests
               run: |
-                  cd proxy_get_body
+                  cd proxy-get-body
                   ../support/test.sh ./about
