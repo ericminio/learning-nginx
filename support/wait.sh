@@ -12,6 +12,3 @@ function waiting {
     done;
     echo "$1 is ready on port $2";
 }
-
-waiting nginx 8080/ping "pong"
-waiting node 5015 "echoing: "

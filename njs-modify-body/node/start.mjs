@@ -1,7 +1,7 @@
-import { payload } from "./payload.js";
-import { Server } from "./server.js";
+import { payload } from "./yop/payload.js";
+import { Server } from "./yop/server.js";
 
-const server = new Server(5015, async (request, response) => {
+const server = new Server(process.env.PORT, async (request, response) => {
   const incoming = await payload(request);
   const answer = `echoing: ${incoming}`;
   console.log("answering with", answer);
@@ -11,5 +11,5 @@ const server = new Server(5015, async (request, response) => {
 });
 
 server.start(() => {
-  console.log("waiting");
+  console.log(`listening on port ${process.env.PORT}`);
 });

@@ -18,6 +18,9 @@ services:
         working_dir: /home/node/app
         ports:
             - 5015:5015
+        environment:
+            - PORT=5015
         volumes:
-            - ./about/support/node:/home/node/app
+            - ./node:/home/node/app
+            - ../support/yop:/home/node/app/yop
         command: "npm start"
