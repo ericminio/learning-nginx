@@ -20,4 +20,4 @@ jobs:
             - name: run tests
               run: |
                   cd proxy_or_stub
-                  ./support/test.sh ./about
+                  ../support/test.sh ./about
