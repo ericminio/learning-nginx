@@ -1,39 +1,39 @@
 name: payload_filter
 
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
 
 jobs:
-  test:
-    name: run tests
-    runs-on: ubuntu-latest
+    test:
+        name: run tests
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v2
-      - name: update /etc/hosts
-        run: |
-          sudo echo "172.17.0.1 host.docker.internal" | sudo tee -a /etc/hosts
-          cat /etc/hosts
-      - name: create matching file
-        run: |
-          cd payload_filter
-          touch ./nginx/conf.d/matching
-      - name: build
-        run: |
-          cd payload_filter/about
-          docker-compose build
-      - name: test config
-        run: |
-          cd payload_filter/about
-          docker-compose run --rm nginx nginx -t
-      - name: start servers
-        run: |
-          cd payload_filter/about
-          docker-compose up -d
-      - name: run tests
-        run: |
-          cd payload_filter
-          ../testing/test.sh ./about
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v2
+            - name: update /etc/hosts
+              run: |
+                  sudo echo "172.17.0.1 host.docker.internal" | sudo tee -a /etc/hosts
+                  cat /etc/hosts
+            - name: create matching file
+              run: |
+                  cd payload_filter
+                  touch ./nginx/conf.d/matching
+            - name: build
+              run: |
+                  cd payload_filter/about
+                  docker-compose build
+            - name: test config
+              run: |
+                  cd payload_filter/about
+                  docker-compose run --rm nginx nginx -t
+            - name: start servers
+              run: |
+                  cd payload_filter/about
+                  docker-compose up -d
+            - name: run tests
+              run: |
+                  cd payload_filter
+                  ../support/test.sh ./about
