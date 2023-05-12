@@ -19,11 +19,11 @@ jobs:
                   cat /etc/hosts
             - name: build
               run: |
-                  cd proxy_get_body/about
+                  cd proxy_get_body
                   docker-compose build
             - name: start servers
               run: |
-                  cd proxy_get_body/about
+                  cd proxy_get_body
                   docker-compose up -d
             - name: run tests
               run: |
