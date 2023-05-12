@@ -19,4 +19,4 @@ jobs:
                   docker-compose up -d
             - name: run tests
               run: |
-                  ./support/test.sh ./njs/hello.sh
+                  ./support/test.sh ./about
