@@ -1,4 +1,4 @@
-name: proxy_or_stub
+name: njs-stub-or-proxy
 
 on:
     push:
@@ -19,13 +19,13 @@ jobs:
                   cat /etc/hosts
             - name: test config
               run: |
-                  cd proxy_or_stub
+                  cd njs-stub-or-proxy
                   docker-compose run --rm nginx nginx -t
             - name: start nginx
               run: |
-                  cd proxy_or_stub
+                  cd njs-stub-or-proxy
                   docker-compose up -d
             - name: run tests
               run: |
-                  cd proxy_or_stub
+                  cd njs-stub-or-proxy
                   ../support/test.sh ./about

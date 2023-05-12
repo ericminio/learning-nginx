@@ -4,7 +4,7 @@
 
 [![proxy_set_header](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_set_header.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_set_header.yml)
 
-[![proxy_or_stub](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_or_stub.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/proxy_or_stub.yml)
+[![njs-stub-or-proxy](https://github.com/ericminio/learning-nginx/actions/workflows/njs-stub-or-proxy.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/njs-stub-or-proxy.yml)
 
 [![payload_filter](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml/badge.svg)](https://github.com/ericminio/learning-nginx/actions/workflows/payload_filter.yml)
 
