@@ -10,11 +10,15 @@ services:
             - ./nginx/conf.d:/etc/nginx/conf.d
 
     api:
-        image: node:14.16.0-buster
+        image: node:18-alpine
         container_name: api
+        user: "node"
+        working_dir: /home/node/app
         ports:
             - 5015:5015
+        environment:
+            - PORT=5015
         volumes:
             - ./api:/home/node/app
-        working_dir: /home/node/app
+            - ../support/yop:/home/node/app/yop
         command: "npm start"

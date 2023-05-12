@@ -1,16 +1,12 @@
 {
-  "name": "learning-nginx",
+  "name": "support",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "start.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha --no-colors \"./**/*.spec.js\"",
-    "start": "node lib/server"
+    "start": "node start.mjs"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^8.3.2"
-  }
+  "license": "ISC"
 }
