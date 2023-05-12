@@ -23,15 +23,15 @@ jobs:
                   touch ./nginx/conf.d/matching
             - name: build
               run: |
-                  cd payload_filter/about
+                  cd payload_filter
                   docker-compose build
             - name: test config
               run: |
-                  cd payload_filter/about
+                  cd payload_filter
                   docker-compose run --rm nginx nginx -t
             - name: start servers
               run: |
-                  cd payload_filter/about
+                  cd payload_filter
                   docker-compose up -d
             - name: run tests
               run: |
