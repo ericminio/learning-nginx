@@ -1,0 +1,44 @@
+version: "3.4"
+
+services:
+    nginx:
+        image: nginx:1.23.4-alpine
+        container_name: nginx
+        ports:
+            - 8080:80
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+
+    hello:
+        image: alpine:3.9.5
+        container_name: hello
+        ports:
+            - 5015:5015
+        environment:
+            - PORT=5015
+            - PONG=hello
+        volumes:
+            - ../support/netcat:/usr/local/src/listen
+        command:
+            [
+                "sh",
+                "-c",
+                "source /usr/local/src/listen/pong.sh && pong_server_listen",
+            ]
+
+    world:
+        image: alpine:3.9.5
+        container_name: world
+        ports:
+            - 5016:5016
+        environment:
+            - PORT=5016
+            - PONG=world
+        volumes:
+            - ../support/netcat:/usr/local/src/listen
+        command:
+            [
+                "sh",
+                "-c",
+                "source /usr/local/src/listen/pong.sh && pong_server_listen",
+            ]
