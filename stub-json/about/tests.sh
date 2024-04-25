@@ -9,3 +9,10 @@ function test_json_header {
     
     assertequals "$type" "Content-Type: application/json"
 }
+
+function test_json_content {
+    nginx_reload_configuration
+    body=$(curl http://localhost:8080/json)
+    
+    assertequals "$body" "{\"alive\":true}"
+}
