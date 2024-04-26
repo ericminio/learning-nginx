@@ -26,3 +26,19 @@ function test_several_endpoints {
     assertequals "$body" '{ "heroes":[{ "name":"Batman", "actually":"Bruce" }, { "name":"Clark", "actually":"Superman" }] }'
 }
 
+function test_qs_based_route_one {
+    nginx_reload_configuration
+    body=$(curl http://localhost:8080/qs?path=1 | json) 
+    
+    
+    assertequals "$body" '{ "one":1 }'
+}
+
+function test_qs_based_route_one {
+    nginx_reload_configuration
+    body=$(curl http://localhost:8080/qs?path=2 | json) 
+    
+    
+    assertequals "$body" '{ "two":2 }'
+}
+
