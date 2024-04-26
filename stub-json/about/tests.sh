@@ -34,9 +34,9 @@ function test_qs_based_route_one {
     assertequals "$body" '{ "one":1 }'
 }
 
-function test_qs_based_route_one {
+function test_qs_based_route_two {
     nginx_reload_configuration
-    body=$(curl http://localhost:8080/qs?path=2 | json) 
+    body=$(curl "http://localhost:8080/qs?noise=before&path=2&extra=after" | json) 
     
     
     assertequals "$body" '{ "two":2 }'
