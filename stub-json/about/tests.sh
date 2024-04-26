@@ -18,3 +18,11 @@ function test_json_content {
     assertequals "$body" '{ "alive":true, "value":42 }'
 }
 
+function test_several_endpoints {
+    nginx_reload_configuration
+    body=$(curl http://localhost:8080/set | json) 
+    
+    
+    assertequals "$body" '{ "heroes":[{ "name":"Batman", "actually":"Bruce" }, { "name":"Clark", "actually":"Superman" }] }'
+}
+
