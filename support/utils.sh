@@ -1,25 +1,21 @@
 #!/bin/bash
 
-function trim {
-    sed "s/^[ $(printf '\n')$(printf '\r')]*//g" | sed "s/[ $(printf '\n')$(printf '\r')]*$//g"
+function oneliner {
+    tr -d '\r\n'
 }
 
-function oneliner {
-    tr -d '\n' | tr -d '\r'
+function shrink {
+    sed -E 's/[ ]+/ /g'
 }
 
 function compact {
-    oneliner | tr -d ' '
+    tr -d ' '
+}
+
+function trim {
+    oneliner | shrink | sed -E 's/(^[ ]*|[ ]*$)//g'
 }
 
 function json {
-    compact | sed 's/{/{ /g' | sed 's/}/ }/g' | sed 's/,/, /g'
-}
-
-
-function test_only_trim {
-    a=" $(printf '\r\n')  123  $(printf '\r\n')  "
-    b=$(printf "%s" "$a" | trim)
-
-    assertequals "$b" "123"
+    oneliner | compact | sed -e 's/{/{ /g' -e 's/}/ }/g' -e 's/,/, /g'
 }
