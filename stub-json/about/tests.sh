@@ -5,7 +5,7 @@ source ../support/utils.sh
 
 function test_json_header {
     nginx_reload_configuration
-    type=$(curl --head http://localhost:8080/ping | grep "Content-Type:" | oneliner)
+    type=$(curl --head http://localhost:8080/ping | grep "Content-Type:" | trim)
     
     assertequals "$type" "Content-Type: application/json"
 }
@@ -17,3 +17,4 @@ function test_json_content {
     
     assertequals "$body" '{ "alive":true, "value":42 }'
 }
+
