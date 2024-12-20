@@ -20,15 +20,15 @@ jobs:
       - name: build
         run: |
           cd template
-          docker-compose build
+          docker compose build
       - name: test config
         run: |
           cd template
-          docker-compose run --rm nginx nginx -t
+          docker compose run --rm nginx nginx -t
       - name: start servers
         run: |
           cd template
-          docker-compose up -d
+          docker compose up -d
       - name: run tests
         run: |
           cd template
